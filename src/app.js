@@ -6,6 +6,7 @@ import apartmentRoutes from './routes/apartmentRoutes.js';
 const app = express();
 
 app.use(express.json());
+app.use('/apartments', apartmentRoutes);
 
 app.get('/test-db', async (req, res) => {
     try {
@@ -19,7 +20,7 @@ app.get('/test-db', async (req, res) => {
     }
 });
 
-app.use('/apartments', apartmentRoutes);
+
 
 
 async function startServer() {
